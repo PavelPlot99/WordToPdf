@@ -15,7 +15,7 @@ class WordService
     public function __construct(String $file)
     {
         Settings::setPdfRendererName(Settings::PDF_RENDERER_DOMPDF);
-        Settings::setPdfRendererPath($_SERVER['DOCUMENT_ROOT'].'/../vendor/dompdf/dompdf');
+        Settings::setPdfRendererPath(base_path('/vendor/dompdf/dompdf'));
         $this->word_template = new TemplateProcessor($file);
     }
 
