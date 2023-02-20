@@ -10,7 +10,7 @@ use PhpOffice\PhpWord\Settings;
 
 class WordService
 {
-    public $word_template;
+    public TemplateProcessor $word_template;
 
     public function __construct(String $file)
     {
@@ -23,6 +23,7 @@ class WordService
     {
         $word = new self($file);
         $word->changeValues($firstname);
+
         return $word->saveAsPdf();
     }
 
